@@ -8,6 +8,8 @@ tags:
   - quartz
 ---
 
+> ➡️ Start here: [Usage](./usage.md)
+
 # [Class Name] — [Semester YYYY]
 
 Welcome to the class site.
@@ -53,12 +55,12 @@ Short class description:
 
 The class is composed from independent block repositories added in `content/blocks/` as git submodules.
 
-| Week | Block | Topic | Slides |
-|---|---|---|---|
-| 01 | `block-ai-intro` | [Topic summary] | [slides-ai-intro](https://slides.yourdomain.com/slides-ai-intro/) |
-| 02 | `block-ml-basics` | [Topic summary] | [slides-ml-basics](https://slides.yourdomain.com/slides-ml-basics/) |
-| 03 | `block-ethics` | [Topic summary] | [slides-ethics](https://slides.yourdomain.com/slides-ethics/) |
-| .. | `block-...` | [...] | [...] |
+| Week | Block             | Topic           | Slides                                                              |
+| ---- | ----------------- | --------------- | ------------------------------------------------------------------- |
+| 01   | `block-ai-intro`  | [Topic summary] | [slides-ai-intro](https://slides.yourdomain.com/slides-ai-intro/)   |
+| 02   | `block-ml-basics` | [Topic summary] | [slides-ml-basics](https://slides.yourdomain.com/slides-ml-basics/) |
+| 03   | `block-ethics`    | [Topic summary] | [slides-ethics](https://slides.yourdomain.com/slides-ethics/)       |
+| ..   | `block-...`       | [...]           | [...]                                                               |
 
 Notes:
 

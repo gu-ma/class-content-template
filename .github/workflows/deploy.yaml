@@ -1,0 +1,41 @@
+name: Create README from index.md
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-index:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Copy index.md to README.md
+      - name: Copy index to README
+        run: cp index.md README.md
+
+      # Remove frontmatter from README.md
+      - name: Remove frontmatter from README
+        run: |
+          awk 'BEGIN{infm=0}
+            NR==1 && $0=="---" {infm=1; next}
+            infm && $0=="---" {infm=0; next}
+            !infm {print}
+          ' README.md > README.clean.md
+          mv README.clean.md README.md
+
+      - name: Commit and push if changed
+        run: |
+          # Configure commit identity for the GitHub Actions bot
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Stage only the generated target file
+          git add README.md
+          # Commit only when there is an actual file change
+          git diff --staged --quiet || git commit -m "chore: create README.md from index.md [skip ci]"
+          # Push commit to the same branch
+          git push
